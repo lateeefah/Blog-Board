@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }} - Blog Board</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+    <small>By {{ post.author }} on {{ post.created_at|date:"M d, Y H:i" }}</small>
+    <br>
+    <a href="{% url 'public_post_list' %}">Back to

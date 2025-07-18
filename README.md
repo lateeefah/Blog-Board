@@ -1,4 +1,4 @@
-# Attachee Blog Board
+#  Blog Board
 
 A simple, collaborative blog-style platform built with Django for you guys. 
 

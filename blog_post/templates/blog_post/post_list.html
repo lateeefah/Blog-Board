@@ -1,0 +1,80 @@
+<!-- blog/templates/blog/post_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Board</title>
+    <style>
+        body {
+            background-color: #f4f6f8;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        .post-card {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .post-card h2 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+
+        .post-card small {
+            color: #888;
+        }
+
+        .post-card p {
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .no-posts {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📝 Published Blog Posts</h1>
+
+        {% for post in posts %}
+            <div class="post-card">
+                <h2>{{ post.title }}</h2>
+                <p><small>Posted on {{ post.created_at|date:"F j, Y, g:i a" }}</small></p>
+                <p>{{ post.body|linebreaks }}</p>
+            </div>
+        {% empty %}
+            <div class="no-posts">
+                <p>No posts available.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

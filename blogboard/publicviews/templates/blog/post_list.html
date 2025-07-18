@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Board - All Posts</title>
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.body }}</p>
+            <small>By {{ post.author }} on {{ post.created_at|date:"M d, Y H:i" }}</small>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+</body>
+</html>
